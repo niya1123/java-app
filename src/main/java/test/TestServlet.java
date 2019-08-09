@@ -17,6 +17,6 @@ public class TestServlet extends HttpServlet {
         resp.setContentType("text/html; charset=UTF-8");
 
         PrintWriter out = resp.getWriter();
-        out.println("Hello Jetty World!");
+        out.println("<h1>Hello Jetty World!</h1>");
     }
 }

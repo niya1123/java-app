@@ -35,3 +35,13 @@ Hello Jetty Worldと表示されていればとりあえず環境は正しく実
 docker-compose down
 ```
 と実行してください.
+
+## ファイルの書き換え方と実行の仕方
+
+TestServletに何かしらを追加したときには, コンテナのコマンドライン上で
+
+```bash
+gradle war
+```
+
+これを実行してwarファイルを更新してください.
