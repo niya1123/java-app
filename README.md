@@ -34,3 +34,10 @@ docker-compose up -d --build
 これを実行した後に, http://localhost:8080/jetty-docker/TestServlet/ に接続してください.
 
 Hello Jetty Worldと表示されていればとりあえず環境は正しく実行されています.
+
+作業を終了する場合は
+
+```bash
+docker-compose down
+```
+と実行してください.
