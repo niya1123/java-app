@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  jetty:
+    image: jetty:9.4.1-alpine
+    container_name: jetty-server
+    volumes:
+      - ./build/libs:/var/lib/jetty/webapps
+    ports:
+      - 8080:8080
+
+  web:
+    build: .
+    ports:
+      - 3000:3000
+    container_name: java_app
+    links:
+      - jetty
+    volumes:
+      - .:/jetty-docker
+    command: /bin/bash
+    tty: true
+    stdin_open: true

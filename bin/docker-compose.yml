@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  jetty:
+    image: jetty:9.4.1-alpine
+
+    ports:
+      - 8080:8080
+    
+    volumes:
+        - ./build/libs:/var/lib/jetty/webapps
+
+  web:
+    build: .
+    ports:
+      - 8080:8080
+    links:
+      - jetty
