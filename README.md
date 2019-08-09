@@ -25,12 +25,6 @@ gradle war
 exit
 ```
 
-次に以下のコマンド実行してください.
-
-```bash
-docker-compose up -d --build
-```
-
 これを実行した後に, http://localhost:8080/jetty-docker/TestServlet/ に接続してください.
 
 Hello Jetty Worldと表示されていればとりあえず環境は正しく実行されています.
