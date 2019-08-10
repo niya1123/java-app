@@ -5,7 +5,7 @@
          id="WebApp_ID"
          version="3.1">
 
-    <display-name>TestDynamicWebApp31</display-name>
+    <display-name>TodoServlet</display-name>
 
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
