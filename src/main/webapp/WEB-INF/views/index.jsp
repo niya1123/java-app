@@ -7,6 +7,14 @@
         <title>To-Do-List</title>
     </head>
     <body>
-        <%= new java.util.Date() %>
+        <% String userName = (String)request.getAttribute("userName"); %>
+        こんにちは、<%= userName %>さん!
+
+        <% if("Guest".equals(userName)) { %>
+        <form method="POST" action="./TestServlet">
+            何か入力してください: <input type="text" name="name">
+            <button tyoe="submit">送信</button>
+        </form>
+        <% } %>
     </body>
 </html>

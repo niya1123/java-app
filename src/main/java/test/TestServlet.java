@@ -17,10 +17,26 @@ public class TestServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         
+        String name = (String) req.getAttribute("userName");
+
+        if(name == null || "".equals(name))
+            req.setAttribute("userName", "Guest");
+        
         String view_path = "/WEB-INF/views/index.jsp";
 
         RequestDispatcher dispatcher = req.getRequestDispatcher(view_path);
 
         dispatcher.forward(req, resp);
+    }
+
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+        
+        req.setCharacterEncoding("utf-8");
+
+        String name = req.getParameter("name");
+
+        req.setAttribute("userName", name);
+
+        doGet(req, resp);
     }
 }
