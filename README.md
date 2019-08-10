@@ -22,7 +22,7 @@ docker attach java_app
 ```bash
 gradle eclipse
 gradle war
-exit
+control+p押した後にcontrol+qを押す
 ```
 
 これを実行した後に, http://localhost:8080/jetty-docker/TestServlet/ に接続してください.
