@@ -11,7 +11,7 @@
         <div id="container">
             
             <div id="janken-space">
-                <video id="video"　src="./data/lose.mp4"></video>
+                <video id="video"　src="./data/lose.mp4" autoplay></video>
             </div>
 
             <div id="hands">
