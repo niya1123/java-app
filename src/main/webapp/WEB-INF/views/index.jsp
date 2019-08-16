@@ -11,7 +11,10 @@
         <div id="container">
             
             <div id="janken-space">
-                <video id="video"　src="./data/lose.mp4" autoplay></video>
+                <video id="video"></video>
+                <script type="text/javascript" charset="UTF-8">
+                    <%@ include file="./js/video.js" %>
+                </script>
             </div>
 
             <div id="hands">
