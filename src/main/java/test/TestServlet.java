@@ -17,10 +17,10 @@ public class TestServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         
-        String name = (String) req.getAttribute("userName");
+        // String name = (String) req.getAttribute("userName");
 
-        if(name == null || "".equals(name))
-            req.setAttribute("userName", "Guest");
+        // if(name == null || "".equals(name))
+        //     req.setAttribute("userName", "Guest");
         
         String view_path = "/WEB-INF/views/index.jsp";
 
@@ -31,11 +31,11 @@ public class TestServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
         
-        req.setCharacterEncoding("utf-8");
+        // req.setCharacterEncoding("utf-8");
 
-        String name = req.getParameter("name");
+        // String name = req.getParameter("name");
 
-        req.setAttribute("userName", name);
+        // req.setAttribute("userName", name);
 
         doGet(req, resp);
     }
