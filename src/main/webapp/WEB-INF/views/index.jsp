@@ -1,35 +1,20 @@
 <%@ page language="java" contentType="text/html ; characterset=UTF-8" pageEncoding="UTF-8" %>
 
+    
 <!DOCTYPE html>
-
 <html lang="ja">
-    <head>
-        <meta charaset="utf-8">
-        <title>君の名は</title>
-        <!-- <link rel="stylesheet" type="text/css" href="./css/main.css"> -->
-        <style type="text/css">
-            <%@include file="./css/main.css" %>
-        </style>
-    </head>
-    <body>
-        <div id="container">
-            <div class="title">
-                <p>本田とじゃんけん</p>
-            </div>
-            
-            <div class="janken-space">
-                <video id="video"></video>
-                <script type="text/javascript" charset="UTF-8">
-                    <%@include file="./js/video.js" %>
-                </script>
-            </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test Game</title>
+    <script src='http://cdn.rawgit.com/phi-jp/phina.js/v0.2.0/build/phina.js'></script>
+    <script src="https://rawgit.com/alkn203/phina-accessory/master/collider.js"></script>
 
-            <div class="hands">
-                <button id="start">スタート</button>
-                <button id="rock" onclick="ai_hand_action()">グー</button>
-                <button id="scissors" onclick="ai_hand_action()">チョキ</button>
-                <button id="paper" onclick="ai_hand_action()">パー</button>
-            </div>
-        </div>
-    </body>
+    <script><%@include file="./js/main.js" %></script>
+</head>
+<body>
+    
+</body>
 </html>
