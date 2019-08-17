@@ -2,7 +2,7 @@
 phina.globalize();
 
 // アセットの登録.
-var ASSETS = {
+let ASSETS = {
 
   // 画像.
   image: {
@@ -37,18 +37,18 @@ var ASSETS = {
 };
 
 // 定数
-var SCREEN_WIDTH   = 640; // 画面横サイズ
-var SCREEN_HEIGHT  = 640; // 画面縦サイズ
-var PLAYER_SIZE    = 64;  // プレイヤーのサイズ
-var PLAYER_SPEED   = 6;   // プレイヤーの速度
-var GROUND_HEIGHT  = 64;  // 地面の縦サイズ
-var JUMP_POWOR     = 20;
-var GRAVITY        = 1.5;
-var ENEMY_SIZE     = 64;
-var ENEMY_MAX_NUM  = 2;
-var ENEMY_INTERVAL = 15;
-var ENEMY_SPEED    = 6;
-var HIT_RADIUS     = 16;  // 当たり判定用の半径
+const SCREEN_WIDTH   = 640; // 画面横サイズ
+const SCREEN_HEIGHT  = 640; // 画面縦サイズ
+const PLAYER_SIZE    = 64;  // プレイヤーのサイズ
+const PLAYER_SPEED   = 6;   // プレイヤーの速度
+const GROUND_HEIGHT  = 64;  // 地面の縦サイズ
+const JUMP_POWOR     = 20;
+const GRAVITY        = 1.5;
+const ENEMY_SIZE     = 64;
+const ENEMY_MAX_NUM  = 2;
+const ENEMY_INTERVAL = 15;
+const ENEMY_SPEED    = 6;
+const HIT_RADIUS     = 16;  // 当たり判定用の半径
 
 
 /**
@@ -71,8 +71,8 @@ phina.define('MainScene',{
     this.backgroundColor = 'skyblue';
 
     // カスタムGrid
-    var grid = Grid(SCREEN_WIDTH, 10);
-    var self = this;
+    let grid = Grid(SCREEN_WIDTH, 10);
+    let self = this;
     // 繰り返して,地面を生成.
     (10).times(function(i) {
       // 地面配置
@@ -82,7 +82,7 @@ phina.define('MainScene',{
     // プレイヤーの作成
     this.player = Player('human').addChildTo(this);
 
-    var lplayer = this.player;
+    let lplayer = this.player;
     // プレイヤーの初期位置の設定.
     lplayer.x = grid.span(0.5);
     lplayer.y = grid.span(8.75);
@@ -109,7 +109,7 @@ phina.define('MainScene',{
 
   // 更新処理(毎フレームごとの)
   update: function(app){
-    var enemys = this.enemyGroup.children;
+    let enemys = this.enemyGroup.children;
     if(app.frame % ENEMY_INTERVAL === 0 && enemys.length < ENEMY_MAX_NUM){
         this.generateEnemy();
     }
@@ -119,19 +119,19 @@ phina.define('MainScene',{
   
   //敵生成処理
   generateEnemy: function(){
-    var x = this.gridX.span(Random.randint(1,15));
-    var y =this.gridY.span(13.85);
+    let x = this.gridX.span(Random.randint(1,15));
+    let y =this.gridY.span(13.85);
     Enemy().addChildTo(this.enemyGroup).setPosition(x,y);
   },
 
   hitEachOther: function(){
-    var player = this.player;
-    // var self = this;
+    let player = this.player;
+    // let self = this;
     // 敵をループ
     this.enemyGroup.children.each(function(enemy) {
       // 判定用の円
-      var c1 = Circle(player.x, player.y, HIT_RADIUS); 
-      var c2 = Circle(enemy.x, enemy.y, HIT_RADIUS); 
+      let c1 = Circle(player.x, player.y, HIT_RADIUS); 
+      let c2 = Circle(enemy.x, enemy.y, HIT_RADIUS); 
       // 円判定
       if (Collision.testCircleCircle(c1, c2) && player.bottom - enemy.top < 30 && Math.abs(player.x - enemy.x) < 10) {
         enemy.remove();
@@ -175,7 +175,7 @@ phina.define('Player',{
     }
 
     //地面ライン
-    var y = SCREEN_HEIGHT - GROUND_HEIGHT; 
+    let y = SCREEN_HEIGHT - GROUND_HEIGHT; 
     // 地面
     if (this.bottom > y) {
       // y方向の速度と重力を無効にする
@@ -247,7 +247,7 @@ phina.define("Ground", {
  */
 phina.main(function() {
   // アプリケーションを生成
-  var app = GameApp({
+  let app = GameApp({
     // メインシーンから開始
     startLabel: 'main',
     // 画面サイズ指定
