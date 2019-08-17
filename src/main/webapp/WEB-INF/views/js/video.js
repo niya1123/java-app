@@ -1,8 +1,11 @@
-var video = document.getElementById("video");    
+const videolist = new Array("lose.mp4");
 
-var videolist = new Array("lose.mp4");
+const video = document.getElementById("video");
 
-var videonum = Math.floor(Math.random() * videolist.length);  
-video.src = "./data/" + videolist[videonum];
-video.load();
-video.play();
+function ai_hand_action () {
+    videonum = Math.floor(Math.random() * videolist.length);  
+    video.src = "./data/" + videolist[videonum];
+    video.load();
+    video.play();
+}
+
